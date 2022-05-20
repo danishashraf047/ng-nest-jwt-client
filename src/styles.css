@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+.p-inline-message {
+    width: 100%;
+}
+
+.p-megamenu {
+    background: lightgrey !important;
+    border: none !important;
+    border-radius: 0 0 25px 25px !important;
+}
+
+.d-header {
+    padding-top: 18px;
+    padding-left: 18px;
+}
+
+.d-content {
+    padding: 30px
+}
+
+body{
+    margin: 0px;
+}
+
+.p-card {
+    background: rgb(0 0 0 / 12%) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.p-card .p-card-content {
+    padding: 0.75rem 1.75rem !important;
+}
+
+h1 {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+.p-button {
+    background-color: lightgrey !important;
+    color: black !important;
+}

@@ -1,0 +1,103 @@
+<p-toast></p-toast>
+<p-megaMenu [model]="menus"></p-megaMenu>
+<div class="d-content">
+    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit($event.submitter.name, f)" novalidate>
+        <p-card>
+            <p-header>
+                <h1 class="d-header">Home</h1>
+            </p-header>
+            <div class="p-fluid p-formgrid p-grid" *ngIf="form">
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" type="text" pInputText [(ngModel)]="form.firstName" required
+                        #firstName="ngModel" name="firstName">
+                    <div *ngIf="f.submitted && firstName.invalid">
+                        <div *ngIf="firstName.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error"
+                                text="First name must be required">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" type="text" pInputText [(ngModel)]="form.lastName" required #lastName="ngModel"
+                        name="lastName">
+                    <div *ngIf="f.submitted && lastName.invalid">
+                        <div *ngIf="lastName.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error" text="Last name must be required">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" pInputText [(ngModel)]="form.email" required email #email="ngModel"
+                        name="email">
+                    <div *ngIf="f.submitted && email.invalid">
+                        <div *ngIf="email.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error" text="Email must be required">
+                            </p-message>
+                        </div>
+                        <div *ngIf="email.errors.email">
+                            <p-message styleClass="p-inline-message" severity="error"
+                                text="Email must be correct format">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input id="phoneNumber" type="text" pInputText [(ngModel)]="form.phoneNumber" required
+                        #phoneNumber="ngModel" name="phoneNumber">
+                    <div *ngIf="f.submitted && phoneNumber.invalid">
+                        <div *ngIf="phoneNumber.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error"
+                                text="Phone number must be required">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="address">Address</label>
+                    <input id="address" type="text" pInputText [(ngModel)]="form.address" required #address="ngModel"
+                        name="address">
+                    <div *ngIf="f.submitted && address.invalid">
+                        <div *ngIf="address.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error" text="Address must be required">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="zipCode">Zip Code</label>
+                    <input id="zipCode" type="text" pInputText [(ngModel)]="form.zipCode" required #zipCode="ngModel"
+                        name="zipCode">
+                    <div *ngIf="f.submitted && zipCode.invalid">
+                        <div *ngIf="zipCode.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error" text="Zip code must be required">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="countryCode">Country Code</label>
+                    <input id="countryCode" type="text" pInputText [(ngModel)]="form.countryCode" required
+                        #countryCode="ngModel" name="countryCode">
+                    <div *ngIf="f.submitted && countryCode.invalid">
+                        <div *ngIf="countryCode.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error"
+                                text="Country code must be required">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p-footer>
+                <div class="p-d-flex p-jc-end">
+                    <button type="submit" name="user" pButton label="Save"></button>
+                </div>
+            </p-footer>
+        </p-card>
+    </form>
+</div>

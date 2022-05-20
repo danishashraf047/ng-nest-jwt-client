@@ -1,0 +1,43 @@
+<p-toast></p-toast>
+<div class="d-center">
+    <p-card header="" [style]="{'width': '350px', 'background': 'lightgrey'}">
+        <ng-template pTemplate="header">
+            <img class="d-login-logo" alt="Card" src="assets/images/login.png">
+        </ng-template>
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit($event.submitter.name)" novalidate>
+            <div class="ui-fluid p-formgrid p-grid" *ngIf="form">
+                <div class="p-field p-col-12 p-input-filled">
+                    <span class="p-input-icon-left d-input-width">
+                        <i class="pi pi-user"></i>
+                        <input class="d-input-width" type="text" pInputText placeholder="Username"
+                            [(ngModel)]="form.username" required #username="ngModel" name="username" />
+                    </span>
+                    <div *ngIf="f.submitted && username.invalid">
+                        <div *ngIf="username.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error" text="Username must be required">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-input-filled">
+                    <span class="p-input-icon-left d-input d-input-width">
+                        <i class="pi pi-lock"></i>
+                        <input class="d-input-width" type="password" pInputText placeholder="Password"
+                            [(ngModel)]="form.password" required #password="ngModel" name="password" />
+                    </span>
+                    <div *ngIf="f.submitted && password.invalid">
+                        <div *ngIf="password.errors.required">
+                            <p-message styleClass="p-inline-message" severity="error" text="Password must be requried">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-field p-col-12 p-md-12">
+                    <div class="p-d-flex p-jc-end">
+                        <button pButton [disabled]="f.invalid" type="submit" name="login" label="Login"></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </p-card>
+</div>
