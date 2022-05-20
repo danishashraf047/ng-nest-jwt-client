@@ -6,7 +6,7 @@
 [![s2](screenshots/screenshot-2.png)](screenshots/screenshot-2.png)
 [![s3](screenshots/screenshot-3.png)](screenshots/screenshot-3.png)
 [![s4](screenshots/screenshot-4.png)](screenshots/screenshot-4.png)
-[![s5](screenshots/screenshot-4.png)](screenshots/screenshot-5.png)
+[![s5](screenshots/screenshot-5.png)](screenshots/screenshot-5.png)
 
 ## Development server
 
